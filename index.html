@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/resets.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Weather App</title>
 </head>
 
 <body>
     <header>
-        <h1>This is the Weather App Header</h1>
+        <h1 class="text-3xl font-bold underline">This is the Weather App Header</h1>
+        <p>This is a blurb about the product.</p>
     </header>
 
     <aside>
@@ -27,17 +31,26 @@
 
     <main>
         <section id="current">
-
+            <div id="displayCurrent">current weather will go here</div>
         </section>
 
         <section id="5day">
-
+            <div class="future" id="day1">Future weather will go here.</div>
+            <div class="future" id="day2">Future weather will go here.</div>
+            <div class="future" id="day3">Future weather will go here.</div>
+            <div class="future" id="day4">Future weather will go here.</div>
+            <div class="future" id="day5">Future weather will go here.</div>
         </section>
     </main>
 
     <footer>
         <p>Thank you for chosing our weather app.</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
