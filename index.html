@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/resets.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Weather App</title>
 </head>
 
 <body>
     <header>
-        <h1 class="text-3xl font-bold underline">This is the Weather App Header</h1>
+        <h1 class="text-3xl font-bold underline text-right">This is the Weather App Header</h1>
         <p>This is a blurb about the product.</p>
     </header>
 
@@ -24,7 +23,8 @@
                     <h2>Search for a city:</h2>
                 </label>
                 <input type="text" placeholder="Search..." name="citySearch" id="citySearch">
-                <button type="submit">Search</button>
+                <input type="select" class="block">
+                <button type="submit" id="fetchBtn">Search</button>
             </form>
         </section>
     </aside>
