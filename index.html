@@ -25,21 +25,57 @@
                 <input type="text" placeholder="Search..." name="citySearch" id="citySearch">
                 <input type="select" class="block">
                 <button type="submit" id="fetchBtn">Search</button>
+
             </form>
         </section>
     </aside>
 
     <main>
         <section id="current">
-            <div id="displayCurrent">current weather will go here</div>
+            <div><span id="currentCity"></span><img id="currentIcon" src=""></div>
+            <p>Temp:<span id="currentTemp"></span></p>
+            <p>Wind:<span id="currentWind"></span></p>
+            <p>Humidity:<span id="currentHumidity"></span></p>
+            <p>UV Index:<span id="currentUV"></span></p>
         </section>
 
         <section id="5day">
-            <div class="future" id="day1">Future weather will go here.</div>
-            <div class="future" id="day2">Future weather will go here.</div>
-            <div class="future" id="day3">Future weather will go here.</div>
-            <div class="future" id="day4">Future weather will go here.</div>
-            <div class="future" id="day5">Future weather will go here.</div>
+            <div class="future" id="day1">
+                <div><span class="futuerDate"></span></div>
+                <img src="">
+                <p class="futureTemp"></p>
+                <p class="futureWind"></p>
+                <p class="futureHumidity"></p>
+            </div>
+            <div class="future" id="day2">
+                <div><span class="futuerDate"></span></div>
+                <img src="">
+                <p class="futureTemp"></p>
+                <p class="futureWind"></p>
+                <p class="futureHumidity"></p>
+            </div>
+            <div class="future" id="day3">
+                <div><span class="futuerDate"></span></div>
+                <img src="">
+                <p class="futureTemp"></p>
+                <p class="futureWind"></p>
+                <p class="futureHumidity"></p>
+            </div>
+            <div class="future" id="day4">
+                <div><span class="futuerDate"></span></div>
+                <img src="">
+                <p class="futureTemp"></p>
+                <p class="futureWind"></p>
+                <p class="futureHumidity"></p>
+            </div>
+            <div class="future" id="day5">
+                <div><span class="futuerDate"></span></div>
+                <img src="">
+                <p class="futureTemp"></p>
+                <p class="futureWind"></p>
+                <p class="futureHumidity"></p>
+            </div>
+            <button id="clear">Clear Search History</button>
         </section>
     </main>
 

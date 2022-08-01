@@ -1,24 +1,43 @@
-var city = "Austin";
-var state = "TX";
-var country = "USA";
 var key1 = "3d1d22fa9f3fdc267f07adb7bc963172";
-var key2 = "e7356777dc9b38f7b5d0489b4bfa632b"
-var latLon = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "," + state + "," + country + "&limit=&appid=" + key2;
+var date = moment().format("MM/DD/YYYY");
 var latLonData;
 
-fetch(latLon)
-    .then((response) => {
-        return response.json();
-    }).then((data) => {
-        return fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + data[0].lat + "&lon=" + data[0].lon + "&exclude=hourly,minutely&appid=" + key2)
-            .then((response) => {
-                return response.json();
-            }).then((data) => {
-                console.log(data);
-            });
-    });
+var searchHandler = function (event) {
+    event.preventDefault();
 
+    var city = $("#citySearch").val();
 
+    if (city) {
+        search(city);
+
+    } else {
+        alert('Please enter a city');
+    }
+};
+
+function search(city) {
+    var latLon = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=&appid=" + key1;
+    fetch(latLon)
+        .then((response) => {
+            return response.json();
+        }).then((data) => {
+            return fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + data[0].lat + "&lon=" + data[0].lon + "&exclude=hourly,minutely&units=imperial&appid=" + key1)
+                .then((response) => {
+                    return response.json();
+                }).then((data) => {
+                    $("#currentCity").text(city + " " + "(" + date + ")");
+                    $("#currentIcon").attr("src", "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png")
+                    console.log(city);
+                    $("#currentTemp").text(" " + Math.floor(data.current.temp) + "\u00B0 F");
+                    $("#currentWind").text(" " + data.current.wind_speed + " MPH");
+                    console.log(data);
+                    $("#currentHumidity").text(" " + data.current.humidity + "\%");
+                    $("#currentUV").text(" " + data.current.uvi)
+                });
+        });
+}
+
+$("#fetchBtn").click(searchHandler);
 // function getWeather(data) {
 //     fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + data[0].lat + "&lon=" + data[0].lon + "&exclude=hourly&appid=" + key2)
 //         .then((response) => {
