@@ -5,81 +5,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- TODO: Smile. You are enough. -->
     <title>Weather App</title>
 </head>
 
 <body>
-    <header>
-        <h1 class="text-3xl font-bold underline text-right">This is the Weather App Header</h1>
-        <p>This is a blurb about the product.</p>
+
+    <header id="pageHeader">
+        <img src="assets/imgs/noun-weather-136792-FB8500.svg" id="weatherIcon" alt="weather icon">
+        <h1>Weather App Name</h1>
+
     </header>
 
-    <aside>
-        <section id="search">
-            <form>
+    <main id="pageMain">
+
+        <aside id="searchAside">
+
+            <form id="searchForm">
                 <label for="citySearch">
                     <h2>Search for a city:</h2>
                 </label>
-                <input type="text" placeholder="Search..." name="citySearch" id="citySearch">
-                <button type="submit" class="block" id="fetchBtn">Search</button>
+                <input type="text" name="citySearch" id="citySearch" placeholder="City...">
+                <button type="submit" class="myBtns" id="fetchBtn">Search</button>
+                <button class="myBtns" id="clearBtn">Clear</button>
             </form>
+
             <div id="searchHistory"></div>
-        </section>
-    </aside>
 
-    <main>
-        <section id="current">
-            <div><span id="currentCity"></span><img id="currentIcon" src=""></div>
-            <p>Temp:<span id="currentTemp"></span></p>
-            <p>Wind:<span id="currentWind"></span></p>
-            <p>Humidity:<span id="currentHumidity"></span></p>
-            <p>UV Index:<span id="currentUV"></span></p>
+        </aside>
+
+        <section id="weather">
+
+            <section id="current">
+                <div><span id="currentCity"></span><img id="currentIcon" src=""></div>
+                <p>Temp:<span id="currentTemp"></span></p>
+                <p>Wind:<span id="currentWind"></span></p>
+                <p>Humidity:<span id="currentHumidity"></span></p>
+                <p>UV Index:<span id="currentUV"></span></p>
+            </section>
+
+            <section id="5day">
+                <div class="future" id="day1">
+                    <div class="dateDiv"><span class="futureDate"></span></div>
+                    <img src="" class="futureIcon">
+                    <p>Temp:<span class="futureTemp"></span></p>
+                    <p>Wind:<span class="futureWind"></span></p>
+                    <p>Humidity:<span class="futureHumidity"></span></p>
+                </div>
+
+                <div class="future" id="day2">
+                    <div class="dateDiv"><span class="futureDate"></span></div>
+                    <img src="" class="futureIcon">
+                    <p>Temp:<span class="futureTemp"></span></p>
+                    <p>Wind:<span class="futureWind"></span></p>
+                    <p>Humidity:<span class="futureHumidity"></span></p>
+                </div>
+
+                <div class="future" id="day3">
+                    <div class="dateDiv"><span class="futureDate"></span></div>
+                    <img src="" class="futureIcon">
+                    <p>Temp:<span class="futureTemp"></span></p>
+                    <p>Wind:<span class="futureWind"></span></p>
+                    <p>Humidity:<span class="futureHumidity"></span></p>
+                </div>
+
+                <div class="future" id="day4">
+                    <div class="dateDiv"><span class="futureDate"></span></div>
+                    <img src="" class="futureIcon">
+                    <p>Temp:<span class="futureTemp"></span></p>
+                    <p>Wind:<span class="futureWind"></span></p>
+                    <p>Humidity:<span class="futureHumidity"></span></p>
+                </div>
+
+                <div class="future" id="day5">
+                    <div class="dateDiv"><span class="futureDate"></span></div>
+                    <img src="" class="futureIcon">
+                    <p>Temp:<span class="futureTemp"></span></p>
+                    <p>Wind:<span class="futureWind"></span></p>
+                    <p>Humidity:<span class="futureHumidity"></span></p>
+                </div>
+
+            </section>
+
         </section>
 
-        <section id="5day">
-            <div class="future" id="day1">
-                <div><span class="futureDate"></span></div>
-                <img src="" class="futureIcon">
-                <p>Temp:<span class="futureTemp"></span></p>
-                <p>Wind:<span class="futureWind"></span></p>
-                <p>Humidity:<span class="futureHumidity"></span></p>
-            </div>
-            <div class="future" id="day2">
-                <div><span class="futureDate"></span></div>
-                <img src="" class="futureIcon">
-                <p>Temp:<span class="futureTemp"></span></p>
-                <p>Wind:<span class="futureWind"></span></p>
-                <p>Humidity:<span class="futureHumidity"></span></p>
-            </div>
-            <div class="future" id="day3">
-                <div><span class="futureDate"></span></div>
-                <img src="" class="futureIcon">
-                <p>Temp:<span class="futureTemp"></span></p>
-                <p>Wind:<span class="futureWind"></span></p>
-                <p>Humidity:<span class="futureHumidity"></span></p>
-            </div>
-            <div class="future" id="day4">
-                <div><span class="futureDate"></span></div>
-                <img src="" class="futureIcon">
-                <p>Temp:<span class="futureTemp"></span></p>
-                <p>Wind:<span class="futureWind"></span></p>
-                <p>Humidity:<span class="futureHumidity"></span></p>
-            </div>
-            <div class="future" id="day5">
-                <div><span class="futureDate"></span></div>
-                <img src="" class="futureIcon">
-                <p>Temp:<span class="futureTemp"></span></p>
-                <p>Wind:<span class="futureWind"></span></p>
-                <p>Humidity:<span class="futureHumidity"></span></p>
-            </div>
-            <button id="clear">Clear Search History</button>
-        </section>
     </main>
 
-    <footer>
-        <p>Thank you for chosing our weather app.</p>
+    <footer id="pageFooter">
+
+        Thank you for chosing our weather app.
+
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

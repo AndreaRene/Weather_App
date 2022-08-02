@@ -1,0 +1,48 @@
+/* TODO: Smile. You are enough. */
+:root {
+    --charcoal: #37515f;
+    --lightCornflower: #8ecae6;
+    --blueGreen: #219ebc;
+    --prussianBlue: #023047;
+    --selectiveYellow: #ffb703;
+    --Tangerine: #fb8500;
+}
+
+body {
+    padding: 4.5rem 0;
+    background-color: var(--blueGreen);
+}
+
+#pageHeader {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    background-color: var(--prussianBlue);
+    font-size: 3rem;
+    color: var(--Tangerine);
+}
+
+#weatherIcon {
+    height: 3rem;
+}
+
+
+
+
+
+
+
+
+
+#pageFooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: var(--selectiveYellow);
+    text-align: center;
+}

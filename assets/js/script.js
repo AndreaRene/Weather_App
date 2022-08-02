@@ -1,3 +1,4 @@
+// TODO: Smile. You are enough.
 var key1 = "3d1d22fa9f3fdc267f07adb7bc963172";
 var date = moment().format("MM/DD/YYYY");
 var cityArray = JSON.parse(localStorage.getItem("city")) || [];
@@ -26,6 +27,11 @@ function search(city) {
         .then((response) => {
             return response.json();
         }).then((data) => {
+            console.log("HERE", data)
+            if (!data.length) {
+                return alert("Please enter a valid city.");
+            }
+
             return fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + data[0].lat + "&lon=" + data[0].lon + "&exclude=hourly,minutely&units=imperial&appid=" + key1)
                 .then((response) => {
                     return response.json();
@@ -37,7 +43,7 @@ function search(city) {
                     $("#currentHumidity").text(" " + data.current.humidity + "\%");
                     $("#currentUV").text(" " + data.current.uvi)
 
-                    console.log(data);
+
 
                     let i = 0;
                     let j = 0;
@@ -70,6 +76,11 @@ function search(city) {
 };
 
 function storeCity() {
+    if (cityArray.some(function (el) {
+        return el === $("#citySearch").val();
+    })) {
+        return;
+    }
     cityArray.push($("#citySearch").val());
     localStorage.setItem("city", JSON.stringify(cityArray));
     makeButtons();
@@ -79,7 +90,7 @@ function storeCity() {
 function makeButtons() {
     $("#searchHistory").empty();
     for (var i = 0; i < cityArray.length; i++) {
-        var button = $("<button>").text(cityArray[i]);
+        var button = $("<button>").addClass("myBtns").text(cityArray[i]);
         $("#searchHistory").append(button);
     };
 };
@@ -90,7 +101,7 @@ function clearStorage() {
 };
 
 $("#fetchBtn").click(searchHandler);
-$("#clear").click(clearStorage);
+$("#clearBtn").click(clearStorage);
 $("#searchHistory").on("click", "button", searchHandler);
 makeButtons();
 
