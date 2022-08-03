@@ -1,6 +1,6 @@
 # Quick Weather
 
-This application is a leightweight weather dashboard that will allow the user to search for weather data based on a city name. You can find the application [here]() I designed it to meet the following criteria:
+This application is a leightweight weather dashboard that will allow the user to search for weather data based on a city name. You can find the application [here](https://andrearene.github.io/Weather_App/) I designed it to meet the following criteria:
 
 * A simple weather dashboared that will display the currenttemperature, wind speed, humidity, and UV Index at the desired location
 * A weather dashboard that will display the 5 day forecast at the desired location

@@ -238,4 +238,9 @@ body {
     #currentCity {
         font-size: 1.7rem;
     }
+
+    #currentUV {
+        padding-top: 0;
+    }
+
 }
