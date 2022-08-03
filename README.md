@@ -24,7 +24,7 @@ This application is a leightweight weather dashboard that will allow the user to
 * [The Noun Project](https://thenounproject.com/): A comprehensive icon collection. 
 
 
-[Here]() is my original design ideas wireframe.
+[Here](https://github.com/AndreaRene/Weather_App/blob/main/imgs/wireframe_med_plus.PNG) is my original design ideas wireframe.
 
 ## Deployed application on an actual mobile device:
 ![screen capture of my app aon a mobile device]()

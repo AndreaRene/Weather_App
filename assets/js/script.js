@@ -21,7 +21,7 @@ var searchHandler = function (event) {
 };
 
 function search(city) {
-    var latLon = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=&appid=" + key1;
+    var latLon = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=&appid=" + key1;
     fetch(latLon)
         .then((response) => {
             return response.json();
