@@ -1,6 +1,11 @@
 // TODO: Smile. You are enough.
+
+// global variables
+
 var key1 = "3d1d22fa9f3fdc267f07adb7bc963172";
 var cityArray = JSON.parse(localStorage.getItem("city")) || [];
+
+// search handler
 
 var searchHandler = function (event) {
     event.preventDefault();
@@ -20,6 +25,8 @@ var searchHandler = function (event) {
     };
 };
 
+// ap calls 1st gets lat and log from city name 2nd gets weather info
+
 function search(city) {
     var latLon = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=&appid=" + key1;
     fetch(latLon)
@@ -34,12 +41,17 @@ function search(city) {
                 .then((response) => {
                     return response.json();
                 }).then((data) => {
+
+                    // display current weather info 
+
                     $("#currentCity").text(city + " " + "(" + moment.unix(data.current.dt).utcOffset(data.timezone_offset / 60).format("MM/DD/YYYY") + ")");
                     $("#currentIcon").attr("src", "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png");
                     $("#currentTemp").text(" " + Math.floor(data.current.temp) + "\u00B0 F");
                     $("#currentWind").text(" " + data.current.wind_speed + " MPH");
                     $("#currentHumidity").text(" " + data.current.humidity + "\%");
                     $("#currentUV").text(" " + data.current.uvi);
+
+                    // display uvi color indicator
 
                     let uvi = data.current.uvi;
                     let currentUV = $("#currentUV");
@@ -54,6 +66,8 @@ function search(city) {
                     } else {
                         currentUV.removeClass().addClass("purple");
                     }
+
+                    // display five day forecast
 
                     let i = 0;
                     let j = 0;
@@ -86,6 +100,8 @@ function search(city) {
         });
 };
 
+// save recent searches to local storeage
+
 function storeCity() {
     if (cityArray.some(function (el) {
         return el === $("#citySearch").val();
@@ -97,6 +113,8 @@ function storeCity() {
     makeButtons();
 
 };
+
+// create up to 8 recent search buttons. replace the oldest with the newest
 
 function makeButtons() {
     $("#searchHistory").empty();
@@ -112,10 +130,14 @@ function makeButtons() {
     };
 };
 
+// clear button to clear local storage and reload page
+
 function clearStorage() {
     localStorage.clear();
     location.reload();
 };
+
+// on load and on click functions
 
 $("#fetchBtn").click(searchHandler);
 $("#clearBtn").click(clearStorage);
