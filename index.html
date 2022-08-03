@@ -28,8 +28,8 @@
                     <h2>Search for a city:</h2>
                 </label>
                 <input type="text" name="citySearch" id="citySearch" placeholder="City...">
-                <button type="submit" class="myBtns" id="fetchBtn">Search</button>
-                <button class="myBtns" id="clearBtn">Clear</button>
+                <span id="searchBtnSpan"><button type="submit" class="myBtns" id="fetchBtn">Search</button>
+                    <button class="myBtns" id="clearBtn">Clear</button></span>
             </form>
 
             <div id="searchHistory"></div>
@@ -39,14 +39,14 @@
         <section id="weather">
 
             <section id="current">
-                <div><span id="currentCity"></span><img id="currentIcon" src=""></div>
+                <div id="cityDiv"><span id="currentCity"></span><img id="currentIcon" src=""></div>
                 <p>Temp:<span id="currentTemp"></span></p>
                 <p>Wind:<span id="currentWind"></span></p>
                 <p>Humidity:<span id="currentHumidity"></span></p>
                 <p>UV Index:<span id="currentUV"></span></p>
             </section>
 
-            <section id="5day">
+            <section id="fiveDay">
                 <div class="future" id="day1">
                     <div class="dateDiv"><span class="futureDate"></span></div>
                     <img src="" class="futureIcon">
