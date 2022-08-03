@@ -39,7 +39,21 @@ function search(city) {
                     $("#currentTemp").text(" " + Math.floor(data.current.temp) + "\u00B0 F");
                     $("#currentWind").text(" " + data.current.wind_speed + " MPH");
                     $("#currentHumidity").text(" " + data.current.humidity + "\%");
-                    $("#currentUV").text(" " + data.current.uvi)
+                    $("#currentUV").text(" " + data.current.uvi);
+
+                    let uvi = data.current.uvi;
+                    let currentUV = $("#currentUV");
+                    if (uvi <= 2) {
+                        currentUV.removeClass().addClass("green");
+                    } else if (uvi > 2 && uvi <= 5) {
+                        currentUV.removeClass().addClass("yellow");
+                    } else if (uvi > 5 && uvi <= 7) {
+                        currentUV.removeClass().addClass("orange");
+                    } else if (uvi > 7 && uvi <= 10) {
+                        currentUV.removeClass().addClass("red");
+                    } else {
+                        currentUV.removeClass().addClass("purple");
+                    }
 
                     let i = 0;
                     let j = 0;
@@ -87,8 +101,14 @@ function storeCity() {
 function makeButtons() {
     $("#searchHistory").empty();
     for (var i = 0; i < cityArray.length; i++) {
-        var button = $("<button>").addClass("myBtns cityBtns").text(cityArray[i]);
-        $("#searchHistory").append(button);
+        if (cityArray.length >= 9) {
+            cityArray.shift();
+            var button = $("<button>").addClass("myBtns cityBtns").text(cityArray[i]);
+            $("#searchHistory").append(button);
+        } else {
+            var button = $("<button>").addClass("myBtns cityBtns").text(cityArray[i]);
+            $("#searchHistory").append(button);
+        }
     };
 };
 

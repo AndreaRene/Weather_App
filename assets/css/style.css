@@ -94,6 +94,26 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+.green {
+    background-color: #289500;
+}
+
+.yellow {
+    background-color: #f7e400;
+}
+
+.orange {
+    background-color: #f8600d;
+}
+
+.red {
+    background-color: #d80010;
+}
+
+.purple {
+    background-color: #6b49c8;
+}
+
 #fiveDay {
     display: flex;
     margin: 3rem 0;
