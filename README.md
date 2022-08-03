@@ -27,5 +27,5 @@ This application is a leightweight weather dashboard that will allow the user to
 [Here](https://github.com/AndreaRene/Weather_App/blob/main/imgs/wireframe_med_plus.PNG) is my original design ideas wireframe.
 
 ## Deployed application on an actual mobile device:
-![screen capture of my app aon a mobile device]()
+![screen capture of my app aon a mobile device](https://github.com/AndreaRene/Weather_App/blob/main/assets/imgs/mobileSS.jpeg)
 
