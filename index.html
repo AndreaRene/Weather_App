@@ -15,17 +15,19 @@
 
     <header id="pageHeader">
         <img src="assets/imgs/noun-weather-136792-FB8500.svg" id="weatherIcon" alt="weather icon">
-        <h1>Weather App Name</h1>
+        <h1>Quick Weather</h1>
 
     </header>
-
+    <div>
+        <p id="appInfo">A lightweight weather app.</p>
+    </div>
     <main id="pageMain">
 
         <aside id="searchAside">
 
             <form id="searchForm">
                 <label for="citySearch">
-                    <h2>Search for a city:</h2>
+                    <h2 id="searchText">Input a city:</h2>
                 </label>
                 <input type="text" name="citySearch" id="citySearch" placeholder="City...">
                 <span id="searchBtnSpan"><button type="submit" class="myBtns" id="fetchBtn">Search</button>
@@ -95,7 +97,8 @@
 
     <footer id="pageFooter">
 
-        Thank you for chosing our weather app.
+        <h2>Made with ☕ and JavaScript.</h2>
+        <p>(but mostly coffee)</p>
 
     </footer>
 
